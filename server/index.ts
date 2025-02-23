@@ -3,6 +3,7 @@ import cors from "cors";
 // import router from "./routes/routes";
 import { config } from "dotenv";
 import mongoose from "mongoose";
+import elfRoutes from "./routes/ElfRoute";
 
 config();
 
@@ -19,6 +20,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello from Backend!');
 });
+
+app.use('/elf', elfRoutes);
 
 // app.use(json());
 // app.use(express.static("public"));
